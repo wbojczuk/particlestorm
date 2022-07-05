@@ -135,7 +135,6 @@ const particleStorm = {
                             particleStorm.particles[i].yVel = particleStorm.randNum(particleStorm.minYSpeed,particleStorm.maxYSpeed);
                             particleStorm.particles[i].xVel = (particleStorm.randInt(1,2) == 2)?particleStorm.randNum(particleStorm.minXSpeed,particleStorm.maxXSpeed):-1*(particleStorm.randNum(particleStorm.minXSpeed,particleStorm.maxXSpeed));
                             particleStorm.particles[i].size = particleStorm.randNum(particleStorm.minSize,particleStorm.maxSize);
-
                         break;
                         case 2:
                             particleStorm.particles[i].yPos = particleStorm.randInt(0,canvasElem.height);
