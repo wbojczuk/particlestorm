@@ -10,14 +10,14 @@ const particleStorm = {
     */
 
     // SETTINGS
-
+    randomWind: true,
     // MIN/MAX PARTICLE SPEED ON THE X-AXIS
-    minXSpeed: 0.4,
-    maxXSpeed: 0.1,
+    minXSpeed: 0.1,
+    maxXSpeed: 0.4,
 
     // MIN/MAX PARTICLE SPEED ON THE Y-AXIS
-    minYSpeed: 0.5,
-    maxYSpeed: 0.2,
+    minYSpeed: 0.2,
+    maxYSpeed: 0.5,
 
     // MIN/MAX PARTICLE SIZE
     minSize: 0.5,
@@ -27,7 +27,7 @@ const particleStorm = {
     zIndex: 5,
 
     // PARTICLE COLOR PASSED AS STRING
-    particleColor: "rgba(0,0,0,0.5)",
+    particleColor: "rgb(57, 153, 236)",
 
     // STROKE COLOR, LEAVE NULL FOR NO STROKE
     strokeColor: null,
@@ -84,6 +84,17 @@ const particleStorm = {
     state: "off",
     particles: [],
     setup: ()=>{
+
+        if(particleStorm.randomWind){
+            const xWind = particleStorm.randNum(0,0.8);
+            particleStorm.maxXSpeed = xWind;
+            particleStorm.minXSpeed = particleStorm.randNum(0,xWind);
+
+            const yWind = particleStorm.randNum(0,0.8);
+            particleStorm.maxYSpeed = yWind;
+            particleStorm.minYSpeed = particleStorm.randNum(0,yWind);
+        }
+
        particleStorm.particles = [];
         let canvasElem = document.createElement("canvas");
         // CREATE AND APPEND CANVAS ELEM
