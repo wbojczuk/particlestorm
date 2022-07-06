@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@700&family=Splash&display=swap');
+*{
+    margin:0;
+    padding:0;
+}
+
+body {
+    background-color: rgb(12, 30, 46);
+    position: relative;
+}
+
+#optionMenu {
+    position: fixed;
+    width: 10vw;
+    height: 100vh;
+    background-color: rgba(15, 65, 105, 0.514);
+    top:0;
+    left:0;
+}
+
+.option-title {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2vw;
+    font-family: 'Source Code Pro', sans-serif;
+    color: rgb(174, 212, 255);
+    text-shadow: 3px 3px 5px rgba(178, 207, 231, 0.514);
+    overflow-x: hidden;
+    box-shadow: 0 3px 2px -2px rgb(140, 189, 235);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-title {
+    color: rgb(57, 153, 236);
+    font-family: 'Splash', cursive;
+    text-align: center;
+    font-size: 8vw;
+}
+
+.content-wrapper {
+    width: 40vw;
+}
+
+.content-title {
+    
+    text-align: left;
+    color: rgb(57, 153, 236);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2vw;
+    font-weight: 800;
+    width: 40vw;
+}
+
+.content {
+    margin-top: 0.5vw;
+    width: 40vw;
+    font-family: sans-serif;
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: rgb(88, 120, 148);
+}
+
+.borders {
+    margin-top: 4vw;
+    padding: 10px;
+    border: 1px solid rgba(0, 140, 255, 0.288);
+    border-radius: 5px;
+}
+
+.methods-title {
+    margin-top: 4vw; 
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding-top: 0.5vw;
+    font-family: sans-serif;
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: rgb(88, 120, 148);
+}
+
+ul li:nth-child(1){
+    padding-top:0;
+}
+
+.code-display{
+    margin-top: 0.5vw;
+    margin-bottom: 2vw;
+    width: 100%;
+    padding: 0.5vw;
+    font-weight: 800;
+    font-family: 'Source Code Pro', sans-serif;
+    font-size: x-large;
+    color:rgb(116, 190, 255);
+    background-color: rgba(87, 87, 87, 0.315);
+}
+
+.code-title{
+    display:inline-block;
+    font-size: xx-large;
+    padding-bottom: 0.5vw;
+}
+
+.code-note {
+    font-size: large;
+    display: inline-block;
+}
+
+.code-type {
+    display: block;
+    font-weight: 800;
+    font-family: 'Source Code Pro', sans-serif;
+    font-size: x-large;
+    color:rgb(116, 190, 255);
+    float: left;
+    padding-bottom: 50px;
+    padding-right: 10px;
+}
+
+.option-button {
+    margin-top: 10px;
+    padding: 10px 0;
+    width: 80%;
+    font-family: 'Source Code Pro', sans-serif;
+    font-size: x-large;
+    background-color: rgba(22, 80, 131, 0.705);
+    border: 1px solid rgba(25, 96, 158, 0.705);
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgba(0, 140, 255, 0.466);
+    border-radius: 3px;
+}
+
+.option-button:nth-child(1){
+    margin-top: 20px;
+}
+
+.option-button:hover {
+    background-color: rgba(116, 190, 255, 0.705);
+    color:rgb(12, 66, 112);
+}
+
+.sm-input {
+    margin-top: 10px;
+    background-color: rgba(11, 39, 63, 0.705);
+    width: 20%;
+    aspect-ratio: 1/1;
+    border: 1px solid rgba(25, 96, 158, 0.705);
+    color: rgba(116, 190, 255, 0.705);
+    font-size: medium;
+    text-align: center;
+}
+
+.lg-input {
+    margin-top: 10px;
+    background-color: rgba(11, 39, 63, 0.705);
+    width: 75%;
+    aspect-ratio: 3/1;
+    border: 1px solid rgba(25, 96, 158, 0.705);
+    color: rgba(116, 190, 255, 0.705);
+    font-size: medium;
+    text-align: center;
+}
+
+.input-wrapper{
+    margin-top: 5px;
+}
+
+.input-wrapper span {
+    font-family: 'Source Code Pro', sans-serif;
+    font-size: x-large;
+    color: rgba(116, 190, 255, 0.705);
+    display: inline-block;
+    padding: 5px;
+}
+
+.submit-button {
+    margin-top: 5px;
+    background-color: rgba(11, 39, 63, 0.705);
+    width: 70%;
+    padding: 2px 7px;
+    font-family: 'Source Code Pro', sans-serif;
+    border: 1px solid rgba(25, 96, 158, 0.705);
+    color: rgba(116, 190, 255, 0.705);
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: rgba(116, 190, 255, 0.705);
+    color:rgb(12, 66, 112);
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>particleStorm.js</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./particlestorm.js" defer></script>
+    <script src="./sitescript.js" defer></script>
+</head>
+<body>
+    <div class="site-title">particleStorm.js</div>
+
+    <section class="main-content center">
+        <div class="content-wrapper">
+
+            <div class="borders">
+            <header class="content-title">Why Use particleStorm.js?</header>
+            <p class="content">
+                Let's be honest. There are hundreds, or thousands of javascript particle frameworks, many with way more features than this one. This script was made for performance. All code is simple, easy to read and follows ES6 standards. Usage is even more easy, this can be seen in the documentation below.
+            </p>
+        </div>
+        <div class="borders">
+            <header class="content-title">How Is The Performance Better?</header>
+            <p class="content">
+                <ul>
+                    <li>&bullet; DOM manipulation is kept to a minimum and the only thing <em>EVER</em> injected to it is one canvas element.</li>
+                    <li>&bullet; The code is simple, clean, and follows ES6 practices</li>
+                    <li>&bullet; <em>NO</em> dependencies.</li>
+                </ul>
+            </p>
+            </div>
+
+            <header class="content-title methods-title">Methods/Settings</header>
+            <div class="code-display">
+                <span class="code-title">Methods:</span> <br>
+               
+            
+                <div class="code-note">
+                    <span class="code-type">start();</span> Starts the script if off, and if paused, can unpause.
+                </span>
+            </div><br>
+                
+                <div class="code-note">
+                    <span class="code-type">stop();</span>  Removes any exisiting particles, removes the canvas from the DOM and kills any event listeners used.
+                </span>
+            </div><br>
+
+            <div class="code-note">
+                <span class="code-type">pause();</span>  Freezes any extisting particles and pauses any script functions.
+            </span>
+        </div><br>
+
+        <div class="code-note">
+            <span class="code-type">resume();</span>  Unfreezes script if paused or starts script if off.
+        </span>
+    </div><br><br>
+    <span class="code-title">Settings:</span> <br>
+
+    <div class="code-note">
+        <span class="code-type">minXSpeed:</span>  Minimum speed for particles on the X-Axis.
+    </span>
+</div><br>
+
+    <div class="code-note">
+        <span class="code-type">maxXSpeed:</span>  Maximum speed for particles on the X-Axis.
+    </span>
+    </div><br>
+
+    <div class="code-note">
+        <span class="code-type">minYSpeed:</span>  Minimum speed for particles on the Y-Axis.
+    </span>
+    </div><br>
+
+    <div class="code-note">
+        <span class="code-type">maxYSpeed:</span>  Maximum speed for particles on the Y-Axis.
+    </span>
+    </div><br>
+
+    <div class="code-note">
+        <span class="code-type">minSize:</span>  Minimum size for particles.
+    </span>
+</div><br>
+
+    <div class="code-note">
+        <span class="code-type">maxSize:</span>  Maximum size for particles.
+    </span>
+    </div><br>
+
+    <div class="code-note">
+        <span class="code-type">zIndex:</span>  z-index css attribute for the canvas element.
+    </span>
+</div><br>
+
+    <div class="code-note">
+        <span class="code-type">particleColor:</span>  Color setting for particles passed as a string value.
+    </span>
+    </div><br>
+
+    <div class="code-note">
+        <span class="code-type">strokeColor:</span>  Stroke color setting, default value is null which disabled the stroke.
+    </span>
+    </div><br>
+
+    <div class="code-note">
+        <span class="code-type">strokeSize:</span>  Size for stroke, if enabled.
+    </span>
+</div><br>
+
+    <div class="code-note">
+        <span class="code-type">amount:</span>  Amount of particles.
+    </span>
+    </div><br>
+
+    <div class="code-note">
+        <span class="code-type">autoStart:</span>  Setting for whether to automatically start the script or not.
+    </span>
+    </div><br>
+            
+        </div>
+    </section>
+
+    <div id="optionMenu">
+        <div class="option-title">Options</div>
+
+        <div class="center">
+            <button class="option-button" id="startButton">Start</button>
+        </div>
+
+        <div class="center">
+            <button class="option-button" id="stopButton">Stop</button>
+        </div>
+
+        <div class="center">
+            <button class="option-button" id="pauseButton">Pause</button>
+        </div>
+
+        <div class="center">
+            <button class="option-button" id="resumeButton">Resume</button>
+        </div>
+
+        <div class="center input-wrapper">
+            <input class="sm-input" id="xMinSpeed" type="text">
+            <span>TO</span>
+            <input class="sm-input" id="xMaxSpeed" type="text">
+        </div>
+        <div class="center">
+            <button class="submit-button" id="submitXSpeed">Change X-Speed</button>
+        </div>
+
+        <div class="center input-wrapper">
+            <input class="sm-input" id="yMinSpeed" type="text">
+            <span>TO</span>
+            <input class="sm-input" id="yMaxSpeed" type="text">
+        </div>
+        <div class="center">
+            <button class="submit-button" id="submitYSpeed">Change Y-Speed</button>
+        </div>
+        
+
+        <div class="center input-wrapper">
+            <input class="sm-input" id="minSize" type="text">
+            <span>TO</span>
+            <input class="sm-input" id="maxSize" type="text">
+        </div>
+        <div class="center">
+            <button class="submit-button" id="submitSize">Change Size</button>
+        </div>
+
+        <div class="center input-wrapper">
+            <input class="lg-input" id="color" type="text">
+        </div>
+        <div class="center">
+            <button class="submit-button" id="submitColor">Change Color</button>
+        </div>
+        
+
+        
+    </div>
+
+</body>
+</html>
