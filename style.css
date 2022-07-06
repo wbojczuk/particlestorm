@@ -191,9 +191,16 @@ ul li:nth-child(1){
     border: 1px solid rgba(25, 96, 158, 0.705);
     color: rgba(116, 190, 255, 0.705);
     cursor: pointer;
+    
 }
 
 .submit-button:hover {
     background-color: rgba(116, 190, 255, 0.705);
     color:rgb(12, 66, 112);
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    text-align: center;
 }
