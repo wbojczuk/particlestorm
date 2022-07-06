@@ -18,7 +18,7 @@ document.getElementById("submitColor").onclick = ()=>{
 document.getElementById("submitXSpeed").onclick = ()=>{
     particleStorm.minXSpeed = parseFloat(document.getElementById("xMinSpeed").value);
     particleStorm.maxXSpeed = parseFloat(document.getElementById("xMaxSpeed").value);
-
+    particleStorm.randomWind = false;
     particleStorm.stop();
     setTimeout(particleStorm.start,20)
     
@@ -27,7 +27,7 @@ document.getElementById("submitXSpeed").onclick = ()=>{
 document.getElementById("submitYSpeed").onclick = ()=>{
     particleStorm.minYSpeed = parseFloat(document.getElementById("yMinSpeed").value);
     particleStorm.maxYSpeed = parseFloat(document.getElementById("yMaxSpeed").value);
-
+    particleStorm.randomWind = false;
     particleStorm.stop();
     setTimeout(particleStorm.start,20)
 };
