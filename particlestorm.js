@@ -1,28 +1,45 @@
 "use strict";
 const particleStorm = {
 
+    /* METHODS
+    particleStorm.
+        stop(); (DESTROYS CURRENT PARTICLES AND KILLS EVENT LISTENERS)
+        pause(); (PAUSES ALL CURRENT PARTICLES)
+        resume(); (CAN EITHER UNPAUSE PARTICLES ARE START SCRIPT DEPENDING ON WHETHER OR NOT THE SCRIPT IS PAUSED OR RUNNING)
+        start(); (SAME PROPERTIES AS resume(); )
+    */
+
     // SETTINGS
 
+    // MIN/MAX PARTICLE SPEED ON THE X-AXIS
     minXSpeed: 0.4,
     maxXSpeed: 0.1,
 
+    // MIN/MAX PARTICLE SPEED ON THE Y-AXIS
     minYSpeed: 0.5,
     maxYSpeed: 0.2,
 
+    // MIN/MAX PARTICLE SIZE
     minSize: 0.5,
     maxSize: 1.5,
 
+    // Z-INDEX ON PAGE
     zIndex: 5,
 
+    // PARTICLE COLOR PASSED AS STRING
     particleColor: "rgba(0,0,0,0.5)",
 
+    // STROKE COLOR, LEAVE NULL FOR NO STROKE
     strokeColor: null,
 
+    // STROKE WIDTH (IF STROKE IS ENABLED)
     strokeWidth: 2,
 
-    amount:50,
+    // PARTICLE AMOUNT
+    amount: 50,
 
-    autoStart:true,
+    // WHETHER OR NOT TO AUTOSTART THE SCRIPT
+    autoStart: true,
     
 
     // UNSERVICABLE STUFF BELOW
@@ -52,7 +69,9 @@ const particleStorm = {
         }
     },
     pause: ()=>{
+        if(particleStorm.state !== "off"){
         particleStorm.state = "pause";
+        }
     },
 
     // EVENT HANDLERS
@@ -81,10 +100,9 @@ const particleStorm = {
 
         window.addEventListener("resize", particleStorm.resizeHandler);
     
-        // populate particles
+        // POPULATE PARTICLES
         
         for(let i=0;i<particleStorm.amount;i++){
-            
             particleStorm.particles.push(
                 {
                     xPos:  particleStorm.randInt(0,canvasElem.width),
@@ -94,9 +112,6 @@ const particleStorm = {
                     size: particleStorm.randNum(particleStorm.minSize,particleStorm.maxSize),
                 }
             );
-
-            
-            
         }
         particleStorm.renderParticles();
     },
@@ -110,7 +125,7 @@ const particleStorm = {
             canvasElem.height);
 
             // DRAW THEM
-            let particleLength = particleStorm.particles.length;
+            const particleLength = particleStorm.particles.length;
             for(let i=0;i<particleLength; i++){
                 canvas2D.beginPath();
                 canvas2D.arc(particleStorm.particles[i].xPos, particleStorm.particles[i].yPos, particleStorm.particles[i].size,
@@ -123,10 +138,10 @@ const particleStorm = {
                 }
                 canvas2D.fill();
 
-                // RECYCLE PARTICLES
+                    // RECYCLE PARTICLES 
                     if(particleStorm.particles[i].yPos < -30 || particleStorm.particles[i].yPos > canvasElem.height + 30 || particleStorm.particles[i].xPos < -30 || particleStorm.particles[i].xPos > canvasElem.width + 30){
 
-                    //    pick top/right/bottom/left aka 1/2/3/4
+                    // PICK TOP/RIGHT/BOTTOM/LEFT FOR RECYCLE LOCATION AKA 1/2/3/4
                     const newLoc = particleStorm.randInt(1,4);
                     switch (newLoc){
                         case 1:
@@ -135,6 +150,7 @@ const particleStorm = {
                             particleStorm.particles[i].yVel = particleStorm.randNum(particleStorm.minYSpeed,particleStorm.maxYSpeed);
                             particleStorm.particles[i].xVel = (particleStorm.randInt(1,2) == 2)?particleStorm.randNum(particleStorm.minXSpeed,particleStorm.maxXSpeed):-1*(particleStorm.randNum(particleStorm.minXSpeed,particleStorm.maxXSpeed));
                             particleStorm.particles[i].size = particleStorm.randNum(particleStorm.minSize,particleStorm.maxSize);
+
                         break;
                         case 2:
                             particleStorm.particles[i].yPos = particleStorm.randInt(0,canvasElem.height);
@@ -193,4 +209,4 @@ const particleStorm = {
     },
 };
 
-if(particleStorm.autoStart){particleStorm.state="on";particleStorm.setup();}
+if(particleStorm.autoStart){particleStorm.start();}
