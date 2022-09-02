@@ -1,3 +1,14 @@
+/*
+
+ Program: particlestorm.js
+ Version: 1.0 
+ Creator: William Bojczuk (wiliambojczuk@gmail.com)
+ License: BSD
+ Github: https://github.com/wbojczuk
+ Website: https://williambojczuk.com
+ 
+ */
+
 "use strict";
 const particleStorm = {
 
